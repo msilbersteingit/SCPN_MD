@@ -1,0 +1,58 @@
+# setups and parameters
+units		real
+boundary	p p p
+atom_style	molecular
+
+neighbor        0.4 bin
+neigh_modify    delay 0 one 55000 page 550000
+bond_style      harmonic
+angle_style     harmonic
+dihedral_style  multi/harmonic
+pair_style      hybrid/overlay lj/cut 10.5
+
+# atom type 1 - regular beads
+# atom type 2 - cross-linked beads
+# atom type 3 - beads cross-linkable but staying not cross-linked
+# bond type 1 - regular bonds
+# bond type 2 - bonds corresponding to intramolecular cross-links
+# bond type 3 - dummy bonds
+mass		1 14.02
+mass		2 14.02
+mass		3 14.02
+bond_coeff      1 350.0000 1.53
+bond_coeff      2 350.0 1.53
+bond_coeff      3 70.0 10.1032454245
+angle_coeff     1 60.0000 109.50
+angle_coeff     2 60.0000 109.50
+dihedral_coeff  1 1.73 -4.49 0.776 6.99 0.0
+dihedral_coeff  2 1.73 -4.49 0.776 6.99 0.0
+pair_coeff      * * none
+pair_coeff      1 1 lj/cut 0.112 4.01
+pair_coeff      1 2 lj/cut 0.112 4.01
+pair_coeff      1 3 lj/cut 0.112 4.01
+pair_coeff      2 2 lj/cut 0.112 4.01
+pair_coeff      2 3 lj/cut 0.112 4.01
+pair_coeff      3 3 lj/cut 0.112 4.01
+
+# simulation steps
+# step 1 - at high pressure
+timestep	2
+fix		fix_npt all npt temp 500.0 500.0 100.0 iso 10 10 1000 drag 2
+run		10000000
+
+# step 2 - from high pressure to zero
+timestep	2
+fix		fix_npt all npt temp 500.0 500.0 100.0 iso 10 0 1000 drag 2
+run		12500000
+
+# step 3 - at zero pressure (for E4, run 50000000)
+timestep	4
+fix		fix_npt all npt temp 500.0 500.0 100.0 iso 0 0 1000 drag 2
+run		25000000
+
+# step 4 - cooling from 500 K to 150 K / 350 K
+timestep	4
+fix		fix_npt all npt temp 500.0 150.0 100.0 iso 0 0 1000 drag 2
+or
+fix		fix_npt all npt temp 500.0 350.0 100.0 iso 0 0 1000 drag 2
+run		6250000
