@@ -1,4 +1,4 @@
-# Ne_calculator and sim_scripts
+# Ne_calculator
 
 Ne_caculator calculates the number of entanglements of bulk polymer MD models by measuring the contour length of primitive path of each macromolecular chain. The contour length is computed from the volume of each confining tube. The volume is measured by counting the number of grid points on which the confining tubes fall. This method prevents the contour length of primitive path from being overestimated, enabling to calculate an accurate number of entanglements.
 
@@ -42,7 +42,7 @@ python postprocess.py
 ```
 This calculates a statistical property, Ne, by averaging over stdout's.
 
-# sim_codes.txt
+# sim_scripts.txt
 sim_scripts include LAMMPS simulation setup and parameters.
 
 # Reference
