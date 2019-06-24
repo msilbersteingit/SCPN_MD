@@ -64,3 +64,16 @@ https://doi.org/10.1021/acs.macromol.8b01027
 }
 
 }
+
+@article{doi:10.1002/adfm.201901806,
+author = {Galant, Or and Bae, Suwon and Silberstein, Meredith N. and Diesendruck, Charles E.},
+title = {Highly Stretchable Polymers: Mechanical Properties Improvement by Balancing Intra- and Intermolecular Interactions},
+journal = {Advanced Functional Materials},
+volume = {0},
+number = {0},
+pages = {1901806},
+keywords = {chain dynamics, intramolecular collapse, mechanical properties, molecular dynamics, thermoplastics},
+doi = {10.1002/adfm.201901806},
+url = {https://onlinelibrary.wiley.com/doi/abs/10.1002/adfm.201901806},
+
+}
