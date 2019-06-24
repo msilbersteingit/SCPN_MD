@@ -42,6 +42,10 @@ python postprocess.py
 ```
 This calculates a statistical property, Ne, by averaging over stdout's.
 
+# internb
+
+Finter.f and Fintra.f calculate inter- and intramolecular forces on the basis of coordinates and force field parameters.
+
 # sim_scripts.txt
 sim_scripts include LAMMPS simulation setup and parameters.
 
