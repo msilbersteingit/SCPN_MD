@@ -1,10 +1,11 @@
 import numpy
 import subprocess
 
-#change num_chains and num_atoms_per_mol depending on model
+# change num_chains and num_atoms_per_mol depending on model
 num_chains=27
 num_atoms_per_mol=2000
 
+# do not change the following lines
 lee=numpy.zeros(num_chains)
 lpp=numpy.zeros(num_chains)
 for i in range(num_chains):

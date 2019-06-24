@@ -21,6 +21,8 @@ echo -e '\t'parameter'('num_atoms_per_mol=$num_atoms_per_mol')' >> var.options
 echo -e '\t'parameter'('griddel=$griddel')' >> var.options
 echo -e '\t'parameter'('rvdw=$rvdw')' >> var.options
 
+mpif90 Neq_mpi.f
+
 num=1
 while [ $num -le $num_chains ]
 do
