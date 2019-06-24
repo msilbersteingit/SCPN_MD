@@ -1,6 +1,6 @@
-# Ne_calculator
+# NePP
 
-Ne_caculator calculates the number of entanglements of bulk polymer MD models by measuring the contour length of primitive path of each macromolecular chain. The contour length is computed from the volume of each confining tube. The volume is measured by counting the number of grid points on which the confining tubes fall. This method prevents the contour length of primitive path from being overestimated, enabling to calculate an accurate number of entanglements.
+NePP calculates the number of entanglements of bulk polymer MD models by measuring the contour length of primitive path of each macromolecular chain. The contour length is computed from the volume of each confining tube. The volume is measured by counting the number of grid points on which the confining tubes fall. This method prevents the contour length of primitive path from being overestimated, enabling to calculate an accurate number of entanglements.
 
 ## Getting Started
 
